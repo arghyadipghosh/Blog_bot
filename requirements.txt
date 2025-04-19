@@ -6,3 +6,4 @@ requests
 google-generativeai
 autogen
 vertexai
+ag2[gemini]
