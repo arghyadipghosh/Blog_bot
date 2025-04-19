@@ -101,7 +101,7 @@ if st.button("Generate Blog Post"):
             # --- Orchestration Flow ---
 
             # Step 1: Researcher gathers information
-            st.info("Researcher is gathering information...")
+            # st.info("Researcher is gathering information...")
             research_task = f"Research content for a blog post on the topic: {blog_name}. Provide key points, facts, and potential sections."
             # Allow up to 5 auto-replies for research for robustness
             research_result = user_proxy.initiate_chat(
@@ -115,13 +115,13 @@ if st.button("Generate Blog Post"):
             research_content = clean_agent_output(research_content) # Clean the output
 
             # Debug: Show the captured research content
-            st.write("--- Debug: Research Content Captured ---")
-            st.write(research_content)
-            st.write("------------------------------------")
+            # st.write("--- Debug: Research Content Captured ---")
+            # st.write(research_content)
+            # st.write("------------------------------------")
 
 
-            st.subheader("Research Findings:")
-            st.write(research_content)
+            # st.subheader("Research Findings:")
+            # st.write(research_content)
 
             # Check if research content looks like valid content
             if not research_content or "No research content generated." in research_content or research_content.strip().lower().startswith("okay") or research_content.strip().lower().startswith("awaiting") or "fact-checking process" in research_content.lower() or "visual integration" in research_content.lower() or research_content.strip().lower().startswith("i will now proceed"):
@@ -142,12 +142,12 @@ if st.button("Generate Blog Post"):
                 blog_post_draft = clean_agent_output(blog_post_draft) # Clean the output
 
                 # Debug: Show the captured blog post draft
-                st.write("--- Debug: Blog Post Draft Captured ---")
-                st.write(blog_post_draft)
-                st.write("------------------------------------")
+                # st.write("--- Debug: Blog Post Draft Captured ---")
+                # st.write(blog_post_draft)
+                # st.write("------------------------------------")
 
-                st.subheader("Blog Post Draft:")
-                st.write(blog_post_draft)
+                # st.subheader("Blog Post Draft:")
+                # st.write(blog_post_draft)
 
                 if not blog_post_draft or "No blog post draft generated." in blog_post_draft or blog_post_draft.strip().lower().startswith("i cannot create") or blog_post_draft.strip().lower().startswith("i will now proceed"): # Added check for previous error message
                     st.error("Writing failed or returned no content. Cannot proceed with editing.")
