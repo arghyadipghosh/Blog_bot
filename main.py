@@ -101,7 +101,7 @@ if st.button("Generate Blog Post"):
             # --- Orchestration Flow ---
 
             # Step 1: Researcher gathers information
-            # st.info("Researcher is gathering information...")
+            st.info("Researcher is gathering information...")
             research_task = f"Research content for a blog post on the topic: {blog_name}. Provide key points, facts, and potential sections."
             # Allow up to 5 auto-replies for research for robustness
             research_result = user_proxy.initiate_chat(
