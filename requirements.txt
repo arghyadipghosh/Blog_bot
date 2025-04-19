@@ -1,0 +1,7 @@
+numpy
+pandas
+streamlit
+python-dotenv
+requests
+google-generativeai
+autogen
